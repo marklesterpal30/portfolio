@@ -17,7 +17,7 @@ module.exports = {
         karla: ["Karla", "serif"],
       },
       colors: {
-        "light-green": "#EFFBF8",
+        "light-green": "#E8E8E8",
         "light-violet": "#A5A6FF",
         "dark-blue": "#130F49",
         "ligth-orange": "#FF972D",

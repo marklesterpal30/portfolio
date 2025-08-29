@@ -4,9 +4,55 @@ import coding from "../images/coding.jpg";
 
 const Services = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [selectedService, setSelectedService] = useState<"frontend" | "backend" | "tools" | null>(null);
+
+  const services = [
+    {
+      key: "frontend" as const,
+      number: "01",
+      title: "Frontend Development",
+      blurb: "Building responsive, accessible UIs and SPAs.",
+      tech: [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "React",
+        "TypeScript",
+        "TailwindCSS",
+        "Axios",
+        "DaisyUI",
+        "Chakra UI",
+      ],
+    },
+    {
+      key: "backend" as const,
+      number: "02",
+      title: "Backend Development",
+      blurb: "Designing secure APIs and robust server logic.",
+      tech: [
+        "Node.js",
+        "Express",
+        "TypeScript",
+        "REST",
+        "JWT Auth",
+        "Prisma / ORM",
+        "PostgreSQL",
+        "MongoDB",
+        "Docker",
+      ],
+    },
+    {
+      key: "tools" as const,
+      number: "03",
+      title: "Web Development Tools",
+      blurb: "Version control, collaboration and containerization for smooth delivery.",
+      tech: ["Git", "GitHub", "Azure Devlops", "GitHub Copilot", "Docker"],
+    },
+  ];
   return (
     <div className="px-52 py-10 relative">
-      {isOpen && (
+      {/* MODAL */}
+      {isOpen && selectedService && (
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -35,18 +81,23 @@ const Services = () => {
             >
               ✖
             </motion.button>
-            <img src={coding} alt="" className="h-[22rem] w-full" />
+            <img src={coding} alt="" className="h-[22rem] w-full object-cover" />
             <h2 className="text-2xl font-inter mt-3 font-bold text-dark-blue mb-3">
-              Web Design
+              {services.find((s) => s.key === selectedService)?.title}
             </h2>
-            <p className="text-light-paragraph">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt,
-              unde rerum? Quae ipsum ea qui nobis dicta odit incidunt officiis
-              doloremque accusantium, eveniet praesentium cum et sed quasi, rem
-              laboriosam! Lorem ipsum dolor sit amet consectetur adipisicing
-              elit. Omnis maxime molestias reprehenderit asperiores error in
-              nisi earum facilis ullam numquam.
+            <p className="text-light-paragraph mb-4">
+              {services.find((s) => s.key === selectedService)?.blurb}
             </p>
+            <h3 className="font-inter font-semibold text-dark-blue mb-2">Tech stack</h3>
+            <div className="flex flex-wrap gap-2">
+              {services
+                .find((s) => s.key === selectedService)
+                ?.tech.map((t) => (
+                  <span key={t} className="px-3 py-1 rounded-md border text-sm">
+                    {t}
+                  </span>
+                ))}
+            </div>
           </motion.div>
         </motion.div>
       )}
@@ -66,216 +117,47 @@ const Services = () => {
         </div>
       </div>
       <div className="cards grid grid-cols-3 gap-9 mt-12">
-        <motion.div
-          onClick={() => setIsOpen(!isOpen)}
-          whileHover={{ y: -8 }} // Hover lifts the card
-          transition={{ type: "spring", stiffness: 200 }}
-          className="border border-1 border-gray-300 p-10 space-y-3.5 rounded-md -z-0"
-        >
-          <p className="font-karla text-[21px] uppercase font-medium text-light-paragraph">
-            01
-          </p>
-          <h1 className="text-[27px] font-inter font-extrabold text-dark-blue">
-            Web Design
-          </h1>
-          <p className="font-karla text-[16px] font-medium text-light-paragraph w-[10rem]">
-            Web Development is the process of programming ...
-          </p>
-          <div className="flex items-center space-x-4">
-            <h1 className="font-inter font-medium text-[16px] text-dark-blue">
-              Read More
+        {services.map((service) => (
+          <motion.div
+            key={service.key}
+            whileHover={{ y: -8 }}
+            transition={{ type: "spring", stiffness: 200 }}
+            onClick={() => {
+              setSelectedService(service.key);
+              setIsOpen(true);
+            }}
+            className="border border-1 border-gray-300 p-10 space-y-3.5 rounded-md cursor-pointer"
+          >
+            <p className="font-karla text-[21px] uppercase font-medium text-light-paragraph">
+              {service.number}
+            </p>
+            <h1 className="text-[27px] font-inter font-extrabold text-dark-blue">
+              {service.title}
             </h1>
-            <svg
-              width={18}
-              height={18}
-              fill="none"
-              stroke="#000000"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={1.5}
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path d="m12.563 5.25 6.75 6.75-6.75 6.75" />
-              <path d="M18.375 12H4.687" />
-            </svg>
-          </div>
-        </motion.div>
-        <motion.div
-          whileHover={{ y: -8 }}
-          transition={{ type: "spring", stiffness: 200 }}
-          onClick={() => setIsOpen(!isOpen)}
-          className="border border-1 border-gray-300 p-10 space-y-3.5 rounded-md"
-        >
-          <p className="font-karla text-[21px] uppercase font-medium text-light-paragraph">
-            01
-          </p>
-          <h1 className="text-[27px] font-inter font-extrabold text-dark-blue">
-            Web Design
-          </h1>
-          <p className="font-karla text-[16px] font-medium text-light-paragraph w-[10rem]">
-            Web Development is the process of programming ...
-          </p>
-          <div className="flex items-center space-x-4">
-            <h1 className="font-inter font-medium text-161px] text-dark-blue">
-              Read More{" "}
-            </h1>
-            <svg
-              width={18}
-              height={18}
-              fill="none"
-              stroke="#000000"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={1.5}
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path d="m12.563 5.25 6.75 6.75-6.75 6.75" />
-              <path d="M18.375 12H4.687" />
-            </svg>
-          </div>
-        </motion.div>
-        <motion.div
-          whileHover={{ y: -8 }}
-          transition={{ type: "spring", stiffness: 200 }}
-          onClick={() => setIsOpen(!isOpen)}
-          className="border border-1 border-gray-300 p-10 space-y-3.5 rounded-md"
-        >
-          <p className="font-karla text-[21px] uppercase font-medium text-light-paragraph">
-            01
-          </p>
-          <h1 className="text-[27px] font-inter font-extrabold text-dark-blue">
-            Web Design
-          </h1>
-          <p className="font-karla text-[16px] font-medium text-light-paragraph w-[10rem]">
-            Web Development is the process of programming ...
-          </p>
-          <div className="flex items-center space-x-4">
-            <h1 className="font-inter font-medium text-161px] text-dark-blue">
-              Read More{" "}
-            </h1>
-            <svg
-              width={18}
-              height={18}
-              fill="none"
-              stroke="#000000"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={1.5}
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path d="m12.563 5.25 6.75 6.75-6.75 6.75" />
-              <path d="M18.375 12H4.687" />
-            </svg>
-          </div>
-        </motion.div>
-        <motion.div
-          whileHover={{ y: -8 }}
-          transition={{ type: "spring", stiffness: 200 }}
-          onClick={() => setIsOpen(!isOpen)}
-          className="border border-1 border-gray-300 p-10 space-y-3.5 rounded-md"
-        >
-          <p className="font-karla text-[21px] uppercase font-medium text-light-paragraph">
-            01
-          </p>
-          <h1 className="text-[27px] font-inter font-extrabold text-dark-blue">
-            Web Design
-          </h1>
-          <p className="font-karla text-[16px] font-medium text-light-paragraph w-[10rem]">
-            Web Development is the process of programming ...
-          </p>
-          <div className="flex items-center space-x-4">
-            <h1 className="font-inter font-medium text-161px] text-dark-blue">
-              Read More{" "}
-            </h1>
-            <svg
-              width={18}
-              height={18}
-              fill="none"
-              stroke="#000000"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={1.5}
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path d="m12.563 5.25 6.75 6.75-6.75 6.75" />
-              <path d="M18.375 12H4.687" />
-            </svg>
-          </div>
-        </motion.div>
-        <motion.div
-          whileHover={{ y: -8 }}
-          transition={{ type: "spring", stiffness: 200 }}
-          onClick={() => setIsOpen(!isOpen)}
-          className="border border-1 border-gray-300 p-10 space-y-3.5 rounded-md"
-        >
-          <p className="font-karla text-[21px] uppercase font-medium text-light-paragraph">
-            01
-          </p>
-          <h1 className="text-[27px] font-inter font-extrabold text-dark-blue">
-            Web Design
-          </h1>
-          <p className="font-karla text-[16px] font-medium text-light-paragraph w-[10rem]">
-            Web Development is the process of programming ...
-          </p>
-          <div className="flex items-center space-x-4">
-            <h1 className="font-inter font-medium text-161px] text-dark-blue">
-              Read More{" "}
-            </h1>
-            <svg
-              width={18}
-              height={18}
-              fill="none"
-              stroke="#000000"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={1.5}
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path d="m12.563 5.25 6.75 6.75-6.75 6.75" />
-              <path d="M18.375 12H4.687" />
-            </svg>
-          </div>
-        </motion.div>
-        <motion.div
-          whileHover={{ y: -8 }}
-          transition={{ type: "spring", stiffness: 200 }}
-          onClick={() => setIsOpen(!isOpen)}
-          className="border border-1 border-gray-300 p-10 space-y-3.5 rounded-md"
-        >
-          <p className="font-karla text-[21px] uppercase font-medium text-light-paragraph">
-            01
-          </p>
-          <h1 className="text-[27px] font-inter font-extrabold text-dark-blue">
-            Web Design
-          </h1>
-          <p className="font-karla text-[16px] font-medium text-light-paragraph w-[10rem]">
-            Web Development is the process of programming ...
-          </p>
-          <div className="flex items-center space-x-4">
-            <h1 className="font-inter font-medium text-161px] text-dark-blue">
-              Read More{" "}
-            </h1>
-            <svg
-              width={18}
-              height={18}
-              fill="none"
-              stroke="#000000"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={1.5}
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path d="m12.563 5.25 6.75 6.75-6.75 6.75" />
-              <path d="M18.375 12H4.687" />
-            </svg>
-          </div>
-        </motion.div>
+            <p className="font-karla text-[16px] font-medium text-light-paragraph w-[16rem]">
+              {service.blurb}
+            </p>
+            <div className="flex items-center space-x-4">
+              <h1 className="font-inter font-medium text-[16px] text-dark-blue">
+                Read More
+              </h1>
+              <svg
+                width={18}
+                height={18}
+                fill="none"
+                stroke="#000000"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={1.5}
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="m12.563 5.25 6.75 6.75-6.75 6.75" />
+                <path d="M18.375 12H4.687" />
+              </svg>
+            </div>
+          </motion.div>
+        ))}
       </div>
     </div>
   );
