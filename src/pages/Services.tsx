@@ -50,14 +50,14 @@ const Services = () => {
     },
   ];
   return (
-    <div className="px-52 py-10 relative">
+    <div className="px-4 sm:px-8 md:px-16 lg:px-32 xl:px-52 py-10 relative">
       {/* MODAL */}
       {isOpen && selectedService && (
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="fixed z-10 inset-0 bg-black bg-opacity-50 flex items-center justify-center"
+          className="fixed z-10 inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4"
           onClick={() => setIsOpen(false)} // Clicking outside closes modal
         >
           {/* Modal Content (Centered) */}
@@ -65,7 +65,7 @@ const Services = () => {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.3 }}
-            className="bg-white p-14 rounded-lg shadow-lg max-w-3xl w-full relative z-50"
+            className="bg-white p-4 sm:p-8 md:p-14 rounded-lg shadow-lg max-w-3xl w-full max-h-[90vh] overflow-y-auto relative z-50"
             onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside
           >
             {/* Close Button */}
@@ -81,19 +81,19 @@ const Services = () => {
             >
               ✖
             </motion.button>
-            <img src={coding} alt="" className="h-[22rem] w-full object-cover" />
-            <h2 className="text-2xl font-inter mt-3 font-bold text-dark-blue mb-3">
+            <img src={coding} alt="" className="h-48 sm:h-64 md:h-[22rem] w-full object-cover rounded" />
+            <h2 className="text-xl sm:text-2xl font-inter mt-3 font-bold text-dark-blue mb-3">
               {services.find((s) => s.key === selectedService)?.title}
             </h2>
-            <p className="text-light-paragraph mb-4">
+            <p className="text-light-paragraph mb-4 text-sm sm:text-base">
               {services.find((s) => s.key === selectedService)?.blurb}
             </p>
-            <h3 className="font-inter font-semibold text-dark-blue mb-2">Tech stack</h3>
+            <h3 className="font-inter font-semibold text-dark-blue mb-2 text-sm sm:text-base">Tech stack</h3>
             <div className="flex flex-wrap gap-2">
               {services
                 .find((s) => s.key === selectedService)
                 ?.tech.map((t) => (
-                  <span key={t} className="px-3 py-1 rounded-md border text-sm">
+                  <span key={t} className="px-2 sm:px-3 py-1 rounded-md border text-xs sm:text-sm">
                     {t}
                   </span>
                 ))}
@@ -101,22 +101,22 @@ const Services = () => {
           </motion.div>
         </motion.div>
       )}
-      <div className="flex justify-between items-center">
+      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 sm:gap-0">
         <div>
-          <p className="font-karla text-[16px] uppercase font-semibold text-ligth-gray">
+          <p className="font-karla text-sm sm:text-[16px] uppercase font-semibold text-ligth-gray">
             - Services
           </p>
-          <h1 className="text-[35px] font-inter font-extrabold text-dark-blue">
+          <h1 className="text-2xl sm:text-3xl lg:text-[35px] font-inter font-extrabold text-dark-blue">
             My Services
           </h1>
         </div>
-        <div>
-          <h1 className="text-dark-blue underline-offset-4 underline text-[16px] font-bold">
+        <div className="text-center sm:text-right">
+          <h1 className="text-dark-blue underline-offset-4 underline text-sm sm:text-[16px] font-bold break-all">
             marklesterpal@gmail.com
           </h1>
         </div>
       </div>
-      <div className="cards grid grid-cols-3 gap-9 mt-12">
+      <div className="cards grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-9 mt-8 sm:mt-12">
         {services.map((service) => (
           <motion.div
             key={service.key}
@@ -126,24 +126,25 @@ const Services = () => {
               setSelectedService(service.key);
               setIsOpen(true);
             }}
-            className="border border-1 border-gray-300 p-10 space-y-3.5 rounded-md cursor-pointer"
+            className="border border-1 border-gray-300 p-6 sm:p-8 lg:p-10 space-y-3 sm:space-y-3.5 rounded-md cursor-pointer"
           >
-            <p className="font-karla text-[21px] uppercase font-medium text-light-paragraph">
+            <p className="font-karla text-lg sm:text-xl lg:text-[21px] uppercase font-medium text-light-paragraph">
               {service.number}
             </p>
-            <h1 className="text-[27px] font-inter font-extrabold text-dark-blue">
+            <h1 className="text-xl sm:text-2xl lg:text-[27px] font-inter font-extrabold text-dark-blue">
               {service.title}
             </h1>
-            <p className="font-karla text-[16px] font-medium text-light-paragraph w-[16rem]">
+            <p className="font-karla text-sm sm:text-base lg:text-[16px] font-medium text-light-paragraph w-full lg:w-[16rem]">
               {service.blurb}
             </p>
-            <div className="flex items-center space-x-4">
-              <h1 className="font-inter font-medium text-[16px] text-dark-blue">
+            <div className="flex items-center space-x-2 sm:space-x-4">
+              <h1 className="font-inter font-medium text-sm sm:text-base lg:text-[16px] text-dark-blue">
                 Read More
               </h1>
               <svg
-                width={18}
-                height={18}
+                width={16}
+                height={16}
+                className="sm:w-[18px] sm:h-[18px]"
                 fill="none"
                 stroke="#000000"
                 strokeLinecap="round"
