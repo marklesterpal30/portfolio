@@ -110,16 +110,16 @@ const Projects = () => {
 	];
 
 	return (
-		<div className="px-52 pb-12">
-			<div className="py-20">
-				<div className="text-center mb-16">
-					<h1 className="text-[18px] text-ligth-gray font-medium mb-4">
+		<div className="px-4 sm:px-8 md:px-16 lg:px-32 xl:px-52 pb-12">
+			<div className="py-10 md:py-20">
+				<div className="text-center mb-8 md:mb-16">
+					<h1 className="text-sm sm:text-base md:text-[18px] text-ligth-gray font-medium mb-2 md:mb-4">
 						-MY WORK
 					</h1>
-					<h1 className="text-[35px] font-bold font-inter text-dark-blue mb-6">
+					<h1 className="text-2xl sm:text-3xl md:text-[35px] font-bold font-inter text-dark-blue mb-4 md:mb-6">
 						Featured Projects
 					</h1>
-					<p className="text-light-paragraph text-[16px] max-w-2xl mx-auto">
+					<p className="text-light-paragraph text-sm sm:text-base md:text-[16px] max-w-2xl mx-auto px-4 sm:px-0">
 						Here are some of my recent projects that showcase my skills in
 						frontend and backend development. Each project demonstrates
 						different technologies and problem-solving approaches.
@@ -127,7 +127,7 @@ const Projects = () => {
 				</div>
 
 				{/* Project Grid */}
-				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+				<div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
 					{projects.map((project) => (
 						<motion.div
 							key={project.id}
@@ -141,24 +141,24 @@ const Projects = () => {
 								<img
 									src={project.image}
 									alt={project.title}
-									className="w-full h-48 object-cover"
+									className="w-full h-40 sm:h-48 object-cover"
 								/>
-								<div className="absolute top-4 left-4">
-									<span className="bg-dark-blue text-white px-3 py-1 rounded-full text-sm font-medium">
+								<div className="absolute top-2 sm:top-4 left-2 sm:left-4">
+									<span className="bg-dark-blue text-white px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-medium">
 										{project.category}
 									</span>
 								</div>
 							</div>
 
-							<div className="p-6">
-								<h3 className="text-xl font-bold font-inter text-dark-blue mb-3">
+							<div className="p-4 sm:p-6">
+								<h3 className="text-lg sm:text-xl font-bold font-inter text-dark-blue mb-2 sm:mb-3">
 									{project.title}
 								</h3>
-								<p className="text-light-paragraph text-sm mb-4 line-clamp-3">
+								<p className="text-light-paragraph text-xs sm:text-sm mb-3 sm:mb-4 line-clamp-3">
 									{project.description}
 								</p>
 
-								<div className="flex flex-wrap gap-2 mb-4">
+								<div className="flex flex-wrap gap-1 sm:gap-2 mb-3 sm:mb-4">
 									{project.technologies.slice(0, 3).map((tech) => (
 										<span
 											key={tech}
@@ -174,12 +174,12 @@ const Projects = () => {
 									)}
 								</div>
 
-								<div className="flex gap-3">
+								<div className="flex flex-col sm:flex-row gap-2 sm:gap-3">
 									<a
 										href={project.github}
 										target="_blank"
 										rel="noopener noreferrer"
-										className="flex-1 bg-dark-blue text-white text-center py-2 px-4 rounded hover:bg-blue-700 transition-colors duration-200 text-sm"
+										className="flex-1 bg-dark-blue text-white text-center py-2 px-3 sm:px-4 rounded hover:bg-blue-700 transition-colors duration-200 text-xs sm:text-sm"
 									>
 										GitHub
 									</a>
@@ -187,7 +187,7 @@ const Projects = () => {
 										href={project.live}
 										target="_blank"
 										rel="noopener noreferrer"
-										className="flex-1 border border-dark-blue text-dark-blue text-center py-2 px-4 rounded hover:bg-dark-blue hover:text-white transition-colors duration-200 text-sm"
+										className="flex-1 border border-dark-blue text-dark-blue text-center py-2 px-3 sm:px-4 rounded hover:bg-dark-blue hover:text-white transition-colors duration-200 text-xs sm:text-sm"
 									>
 										Live Demo
 									</a>
@@ -198,14 +198,14 @@ const Projects = () => {
 				</div>
 
 				{/* Call to Action */}
-				<div className="text-center mt-16">
-					<h2 className="text-2xl font-bold font-inter text-dark-blue mb-4">
+				<div className="text-center mt-8 md:mt-16 px-4 sm:px-0">
+					<h2 className="text-xl sm:text-2xl font-bold font-inter text-dark-blue mb-3 sm:mb-4">
 						Interested in working together?
 					</h2>
-					<p className="text-light-paragraph mb-6">
+					<p className="text-light-paragraph text-sm sm:text-base mb-4 sm:mb-6">
 						Let's discuss your project and bring your ideas to life
 					</p>
-					<button className="btn px-8 py-3 bg-dark-blue text-white hover:bg-blue-700 transition-colors duration-200">
+					<button className="btn px-6 sm:px-8 py-2 sm:py-3 bg-dark-blue text-white hover:bg-blue-700 transition-colors duration-200 rounded text-sm sm:text-base">
 						Get In Touch
 					</button>
 				</div>
