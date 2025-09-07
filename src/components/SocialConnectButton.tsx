@@ -93,11 +93,15 @@ const SocialConnectButton = () => {
 	];
 
 	useEffect(() => {
-		// Show on page load if at top
+		// Show initially for 2 seconds
 		if (window.scrollY === 0) {
 			setIsOpen(true);
+			const timer = setTimeout(() => setIsOpen(false), 2000); // hide after 2s
+			return () => clearTimeout(timer);
 		}
+	}, []);
 
+	useEffect(() => {
 		const handleScroll = () => {
 			if (window.scrollY === 0) {
 				setIsOpen(true); // reopen when at very top
