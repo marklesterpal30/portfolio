@@ -17,61 +17,61 @@ const Testimonial = () => {
 
   const slides = [
     (
-      <div className="h-[19rem] text-center flex flex-col items-center justify-center px-6">
-        <p className="font-inter font-medium text-light-gray text-[20px] md:text-[22px] max-w-3xl">
-          “The code quality and support are excellent. They respond quickly and
-          provide clear solutions. Highly recommended!”
+      <div className="h-[20rem] sm:h-[22rem] md:h-[24rem] text-center flex flex-col items-center justify-center px-4 sm:px-6">
+        <p className="font-inter font-medium text-light-gray text-base sm:text-lg md:text-[20px] lg:text-[22px] max-w-3xl leading-relaxed">
+          "The code quality and support are excellent. They respond quickly and
+          provide clear solutions. Highly recommended!"
         </p>
-        <div className="flex space-x-4 items-center mt-6">
-          <img src={user1} className="w-12 h-12 rounded-full" alt="" />
-          <div className="text-left">
-            <h1 className="font-inter text-dark-blue text-[20px] font-semibold">John Doe</h1>
-            <p className="text-light-paragraph font-inter text-[14px]">UI/UX Designer, Unilab</p>
+        <div className="flex flex-col sm:flex-row sm:space-x-4 items-center mt-4 sm:mt-6 space-y-3 sm:space-y-0">
+          <img src={user1} className="w-10 h-10 sm:w-12 sm:h-12 rounded-full" alt="" />
+          <div className="text-center sm:text-left">
+            <h1 className="font-inter text-dark-blue text-lg sm:text-[20px] font-semibold">John Doe</h1>
+            <p className="text-light-paragraph font-inter text-sm sm:text-[14px]">UI/UX Designer, Unilab</p>
           </div>
         </div>
       </div>
     ),
     (
-      <div className="h-[19rem] text-center flex flex-col items-center justify-center px-6">
-        <p className="font-inter font-medium text-light-gray text-[20px] md:text-[22px] max-w-3xl">
-          “Professional and reliable. They delivered on time with clean,
-          maintainable code. Great communication throughout.”
+      <div className="h-[20rem] sm:h-[22rem] md:h-[24rem] text-center flex flex-col items-center justify-center px-4 sm:px-6">
+        <p className="font-inter font-medium text-light-gray text-base sm:text-lg md:text-[20px] lg:text-[22px] max-w-3xl leading-relaxed">
+          "Professional and reliable. They delivered on time with clean,
+          maintainable code. Great communication throughout."
         </p>
-        <div className="flex space-x-4 items-center mt-6">
-          <img src={user1} className="w-12 h-12 rounded-full" alt="" />
-          <div className="text-left">
-            <h1 className="font-inter text-dark-blue text-[20px] font-semibold">Jane Smith</h1>
-            <p className="text-light-paragraph font-inter text-[14px]">Product Manager, Apex</p>
+        <div className="flex flex-col sm:flex-row sm:space-x-4 items-center mt-4 sm:mt-6 space-y-3 sm:space-y-0">
+          <img src={user1} className="w-10 h-10 sm:w-12 sm:h-12 rounded-full" alt="" />
+          <div className="text-center sm:text-left">
+            <h1 className="font-inter text-dark-blue text-lg sm:text-[20px] font-semibold">Jane Smith</h1>
+            <p className="text-light-paragraph font-inter text-sm sm:text-[14px]">Product Manager, Apex</p>
           </div>
         </div>
       </div>
     ),
     (
-      <div className="h-[19rem] text-center flex flex-col items-center justify-center px-6">
-        <p className="font-inter font-medium text-light-gray text-[20px] md:text-[22px] max-w-3xl">
-          “They took our idea and turned it into a fast, modern web app. The UI
-          looks great and works perfectly on mobile.”
+      <div className="h-[20rem] sm:h-[22rem] md:h-[24rem] text-center flex flex-col items-center justify-center px-4 sm:px-6">
+        <p className="font-inter font-medium text-light-gray text-base sm:text-lg md:text-[20px] lg:text-[22px] max-w-3xl leading-relaxed">
+          "They took our idea and turned it into a fast, modern web app. The UI
+          looks great and works perfectly on mobile."
         </p>
-        <div className="flex space-x-4 items-center mt-6">
-          <img src={user1} className="w-12 h-12 rounded-full" alt="" />
-          <div className="text-left">
-            <h1 className="font-inter text-dark-blue text-[20px] font-semibold">Carlos Reyes</h1>
-            <p className="text-light-paragraph font-inter text-[14px]">Founder, NovaTech</p>
+        <div className="flex flex-col sm:flex-row sm:space-x-4 items-center mt-4 sm:mt-6 space-y-3 sm:space-y-0">
+          <img src={user1} className="w-10 h-10 sm:w-12 sm:h-12 rounded-full" alt="" />
+          <div className="text-center sm:text-left">
+            <h1 className="font-inter text-dark-blue text-lg sm:text-[20px] font-semibold">Carlos Reyes</h1>
+            <p className="text-light-paragraph font-inter text-sm sm:text-[14px]">Founder, NovaTech</p>
           </div>
         </div>
       </div>
     ),
     (
-      <div className="h-[19rem] text-center flex flex-col items-center justify-center px-6">
-        <p className="font-inter font-medium text-light-gray text-[20px] md:text-[22px] max-w-3xl">
-          “Solid backend and smooth frontend. The handoff was seamless and
-          documentation was clear. Would definitely work together again.”
+      <div className="h-[20rem] sm:h-[22rem] md:h-[24rem] text-center flex flex-col items-center justify-center px-4 sm:px-6">
+        <p className="font-inter font-medium text-light-gray text-base sm:text-lg md:text-[20px] lg:text-[22px] max-w-3xl leading-relaxed">
+          "Solid backend and smooth frontend. The handoff was seamless and
+          documentation was clear. Would definitely work together again."
         </p>
-        <div className="flex space-x-4 items-center mt-6">
-          <img src={user1} className="w-12 h-12 rounded-full" alt="" />
-          <div className="text-left">
-            <h1 className="font-inter text-dark-blue text-[20px] font-semibold">Mika Tan</h1>
-            <p className="text-light-paragraph font-inter text-[14px]">Engineering Lead, Horizon</p>
+        <div className="flex flex-col sm:flex-row sm:space-x-4 items-center mt-4 sm:mt-6 space-y-3 sm:space-y-0">
+          <img src={user1} className="w-10 h-10 sm:w-12 sm:h-12 rounded-full" alt="" />
+          <div className="text-center sm:text-left">
+            <h1 className="font-inter text-dark-blue text-lg sm:text-[20px] font-semibold">Mika Tan</h1>
+            <p className="text-light-paragraph font-inter text-sm sm:text-[14px]">Engineering Lead, Horizon</p>
           </div>
         </div>
       </div>
@@ -86,20 +86,20 @@ const Testimonial = () => {
   return (
     <div
       id="indicators-carousel"
-      className="relative w-full   px-52 py-20"
+      className="relative w-full px-4 sm:px-8 md:px-16 lg:px-32 xl:px-52 py-10 md:py-20"
       data-carousel="static"
     >
-      <div className="bg-more-light-pink p-14">
-        <div>
-          <p className="text-center text-light-gray font-semibold text-[16px] font-karla">
+      <div className="bg-more-light-pink p-6 sm:p-8 md:p-12 lg:p-14 rounded-lg">
+        <div className="mb-6 md:mb-8">
+          <p className="text-center text-light-gray font-semibold text-sm sm:text-base md:text-[16px] font-karla">
             - TESTIMONIAL
           </p>
-          <h1 className="text-dark-blue font-extrabold font-inter text-center text-[35px]">
+          <h1 className="text-dark-blue font-extrabold font-inter text-center text-2xl sm:text-3xl md:text-[35px] mt-2">
             What Client's say?
           </h1>
         </div>
         {/* Carousel wrapper */}
-        <div className="relative h-56 overflow-hidden rounded-lg md:h-96 mt-8">
+        <div className="relative h-[20rem] sm:h-[22rem] md:h-[24rem] overflow-hidden rounded-lg mt-6 md:mt-8">
           <AnimatePresence initial={false} custom={direction}>
             <motion.div
               key={active}
@@ -115,10 +115,10 @@ const Testimonial = () => {
           </AnimatePresence>
         </div>
         {/* Slider indicators */}
-        <div className="absolute z-30 flex -translate-x-1/2 space-x-3 rtl:space-x-reverse bottom-32  left-1/2">
+        <div className="flex justify-center space-x-3 rtl:space-x-reverse mt-6 md:mt-8">
           <button
             type="button"
-            className={`w-3 h-3 rounded-full ${active === 0 ? "!bg-red-500" : "!bg-red-400"}`}
+            className={`w-3 h-3 rounded-full transition-colors ${active === 0 ? "!bg-red-500" : "!bg-red-400"}`}
             aria-current={active === 0}
             aria-label="Slide 1"
             data-carousel-slide-to="0"
@@ -126,7 +126,7 @@ const Testimonial = () => {
           ></button>
           <button
             type="button"
-            className={`w-3 h-3 rounded-full ${active === 1 ? "!bg-red-500" : "!bg-red-400"}`}
+            className={`w-3 h-3 rounded-full transition-colors ${active === 1 ? "!bg-red-500" : "!bg-red-400"}`}
             aria-current={active === 1}
             aria-label="Slide 2"
             data-carousel-slide-to="1"
@@ -134,7 +134,7 @@ const Testimonial = () => {
           ></button>
           <button
             type="button"
-            className={`w-3 h-3 rounded-full ${active === 2 ? "!bg-red-500" : "!bg-red-400"}`}
+            className={`w-3 h-3 rounded-full transition-colors ${active === 2 ? "!bg-red-500" : "!bg-red-400"}`}
             aria-current={active === 2}
             aria-label="Slide 3"
             data-carousel-slide-to="2"
@@ -142,7 +142,7 @@ const Testimonial = () => {
           ></button>
           <button
             type="button"
-            className={`w-3 h-3 rounded-full ${active === 3 ? "!bg-red-500" : "!bg-red-400"}`}
+            className={`w-3 h-3 rounded-full transition-colors ${active === 3 ? "!bg-red-500" : "!bg-red-400"}`}
             aria-current={active === 3}
             aria-label="Slide 4"
             data-carousel-slide-to="3"
